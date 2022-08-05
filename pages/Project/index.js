@@ -43,6 +43,7 @@ const Project = () => {
   const [hexToNum, setHexToNum] = useState(0);
   const [stringDataLong, setStringDataLong] = useState('');
   const [stringDataLat, setStringDataLat] = useState('');
+  const [stringDataDirection, setStringDataDirection] = useState('');
   const imgsKong = require('../../images/huoche_1.png');
   const imgsMan = require('../../images/huoche_2.png');
   // 蓝牙权限
@@ -296,6 +297,13 @@ const Project = () => {
         obj.lat = data;
       }, (err) => {
         console.log(err, 'errLat');
+      });
+      // 行进角度
+      NativeModules.ToastModule.dataToRNDirection((data) => {
+        setStringDataDirection(data);
+        obj.direction = data;
+      }, (err) => {
+        console.log(err, 'errDirection');
       });
       onGPSAdd(obj);
     }, 9000);

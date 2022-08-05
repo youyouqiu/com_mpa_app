@@ -10,6 +10,7 @@ public class MessageDto {
 
     private Double latitude;
     private Double longitude;
+    private Float direction;
 
     public Double getLatitude() {
         return latitude;
@@ -25,5 +26,13 @@ public class MessageDto {
 
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
+    }
+
+    public Float getDirection() {
+        return direction;
+    }
+
+    public void setDirection(Float direction) {
+        this.direction = direction;
     }
 }

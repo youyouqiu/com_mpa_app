@@ -17,6 +17,7 @@ public class MyLocationListener extends BDAbstractLocationListener{
         double latitude = location.getLatitude();    //获取纬度信息
         double longitude = location.getLongitude();    //获取经度信息
         float radius = location.getRadius();    //获取定位精度，默认值为0.0f
+        float direction = location.getDirection();     //获取行进角度信息
         
         String coorType = location.getCoorType();
         //获取经纬度坐标类型，以LocationClientOption中设置过的坐标类型为准
@@ -27,6 +28,7 @@ public class MyLocationListener extends BDAbstractLocationListener{
         MessageDto me = new MessageDto();
         me.setLatitude(latitude);
         me.setLongitude(longitude);
+        me.setDirection(direction);
 
         ToastModule.dataCallBack(me, errorCode);
     }
